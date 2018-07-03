@@ -77,6 +77,18 @@ $(function () {
     $('[data-toggle="popover"]').popover();
 });
 
+//
+// Create a button that toggle control-sidebar (right-sidebar) on ajax.
+//
+$(function () {
+    var btn = "[data-toggle='control-sidebar']";
+    $('body').off('click',btn)
+    $('body').on('click',btn, function (e) {
+        e.preventDefault();
+        $('aside.control-sidebar').toggleClass('control-sidebar-open');
+    })
+});
+
 (function ($) {
     $.fn.admin = LA;
     $.admin = LA;
